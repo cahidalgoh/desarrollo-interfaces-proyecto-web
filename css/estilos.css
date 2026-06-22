@@ -212,3 +212,73 @@ body {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     border-radius: 30px 120px 30px 30px; 
 }
+
+
+/* =======================================================
+   AGREGADO: Estilos Exclusivos para la Página de Servicios 
+   ======================================================= */
+
+.services-section {
+    padding: 80px 20px;
+    min-height: 80vh;
+}
+
+.services-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.services-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.services-title h1 {
+    color: var(--dark-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.services-title p {
+    color: #777;
+    font-size: 1.1rem;
+}
+
+/* Mejoras específicas para las tarjetas detalladas de la página independiente */
+.services-section .service-card {
+    padding: 40px 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services-section .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.icon-box {
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+
+/* --- Ajustes de Adaptabilidad (Responsive) --- */
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 sola columna vertical en celulares */
+        gap: 25px;
+    }
+    .services-title h1 {
+        font-size: 2rem;
+    }
+}
