@@ -25,7 +25,6 @@ body {
     padding: 0 20px;
 }
 
-/* --- Header & Nav --- */
 .main-header {
     background: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -66,7 +65,6 @@ body {
     color: var(--primary-color);
 }
 
-/* --- Hero Section --- */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1200') no-repeat center center/cover;
     height: 70vh;
@@ -105,7 +103,6 @@ body {
     background: #439a46;
 }
 
-/* --- Services Grid --- */
 .services-preview {
     padding: 60px 0;
     text-align: center;
@@ -139,10 +136,9 @@ body {
     color: var(--dark-color);
 }
 
-/* --- Sobre Nosotros (Alineación Horizontal Forzada) --- */
 #sobre-nosotros {
     display: grid;
-    grid-template-columns: 7fr 5fr; /* Esto divide tu pantalla en 2 columnas fijas */
+    grid-template-columns: 7fr 5fr; 
     gap: 50px;
     padding: 70px 8%;           
     background-color: #f9fbf9;
@@ -213,11 +209,6 @@ body {
     border-radius: 30px 120px 30px 30px; 
 }
 
-
-/* =======================================================
-   AGREGADO: Estilos Exclusivos para la Página de Servicios 
-   ======================================================= */
-
 .services-section {
     padding: 80px 20px;
     min-height: 80vh;
@@ -245,7 +236,6 @@ body {
     font-size: 1.1rem;
 }
 
-/* Mejoras específicas para las tarjetas detalladas de la página independiente */
 .services-section .service-card {
     padding: 40px 25px;
     border-radius: 15px;
@@ -266,7 +256,6 @@ body {
     margin-bottom: 5px;
 }
 
-/* --- Ajustes de Adaptabilidad (Responsive) --- */
 @media (max-width: 992px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
