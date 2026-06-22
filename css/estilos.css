@@ -139,31 +139,76 @@ body {
     color: var(--dark-color);
 }
 
-/* --- Footer --- */
-.main-footer {
-    background: var(--dark-color);
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
+/* --- Sobre Nosotros (Alineación Horizontal Forzada) --- */
+#sobre-nosotros {
+    display: grid;
+    grid-template-columns: 7fr 5fr; /* Esto divide tu pantalla en 2 columnas fijas */
+    gap: 50px;
+    padding: 70px 8%;           
+    background-color: #f9fbf9;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* --- RESPONSIVE (Media Queries) --- */
-@media (max-width: 768px) {
-    .header-flex {
-        flex-direction: column;
-        gap: 15px;
-    }
+.texto-nosotros h6 {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0 0 12px 0;
+    font-size: 0.9rem;
+}
 
-    .main-nav ul {
-        padding: 0;
-    }
+.texto-nosotros h2 {
+    color: var(--dark-color);
+    font-size: 2.3rem;
+    line-height: 1.2;
+    margin: 0 0 24px 0;
+    font-weight: 800;
+}
 
-    .hero h1 {
-        font-size: 2rem;
-    }
+.texto-nosotros p {
+    color: var(--text-color);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0 0 20px 0;
+}
 
-    .services-grid {
-        grid-template-columns: 1fr; /* Pasa de 3 columnas a 1 en celulares */
-    }
+.btn-descubre {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff !important;
+    padding: 12px 32px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-descubre:hover {
+    background-color: #439a46;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(76, 175, 80, 0.3);
+}
+
+.btn-descubre .flecha {
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+.verduras {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.verduras img {
+    width: 100%;
+    max-height: 440px;
+    object-fit: cover;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 30px 120px 30px 30px; 
 }
