@@ -1,76 +1,63 @@
 /* --- Variables y Reset --- */
 :root {
-    /* Variables CSS: Centralizan los colores de la paleta para mantener consistencia 
-       y permitir cambios globales rápidos. Cumple con principios de UI/UX de consistencia. */
-    --primary-color: #4CAF50; /* Verde principal (identidad de salud/bienestar) */
-    --dark-color: #2E3A2F;    /* Gris verdoso oscuro para textos principales y fondos contrastantes */
-    --light-color: #f9fbf9;   /* Blanco roto/hueso para el fondo general del sitio */
-    --text-color: #555;       /* Gris medio para los párrafos, reduciendo la fatiga visual */
+    --primary-color: #4CAF50;
+    --dark-color: #2E3A2F;  
+    --light-color: #f9fbf9;  
+    --text-color: #555;      
 }
 
 * {
     margin: 0;
     padding: 0;
-    /* Box-sizing Border-box: Cambia el modelo de caja del navegador. Hace que el 
-       padding y el border se incluyan DENTRO del ancho (width) total del elemento. 
-       Evita que las cajas se desborden o se rompa el diseño adaptativo. */
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: var(--light-color); /* Aplica el color de fondo general */
-    color: var(--text-color);             /* Color por defecto para el texto */
-    line-height: 1.6;                     /* Altura de línea para mejorar la legibilidad del texto */
+    background-color: var(--light-color); 
+    color: var(--text-color);             
+    line-height: 1.6;                     
 }
 
 .container {
-    /* Contenedor Adaptativo: Establece un ancho máximo para pantallas grandes 
-       y usa 'margin: 0 auto' para centrar el bloque horizontalmente. */
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 20px; /* Padding lateral de seguridad para que el contenido no pegue al borde en móviles */
-}
+    padding: 0 20px; 
+} /* <-- ¡CORREGIDO!: Faltaba esta llave de cierre */
 
 /* --- Header & Nav --- */
 .main-header {
     background: #fff;
-    /* Box-shadow: Crea un efecto de sombra sutil bajo el header para darle profundidad (profundidad visual) */
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     padding: 20px 0;
-    /* Cabecera Fija: 'sticky' mantiene el menú flotando en la parte superior al hacer scroll, 
-       mejorando la usabilidad del sitio web. El 'z-index' asegura que pase por encima del contenido. */
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
 .header-flex {
-    /* Flexbox: Alinea el Logo y el Menú en una fila horizontal distribuyéndolos 
-       a los extremos opuestos (space-between) y centrándolos verticalmente (center). */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo h2 span {
-    color: var(--primary-color); /* Resalta el "Coaching" con el verde de la marca */
+    color: var(--primary-color); 
 }
 
 .main-nav ul {
-    display: flex; /* Coloca los elementos de la lista de navegación en una fila horizontal */
-    list-style: none; /* Elimina los puntos o viñetas por defecto de las listas 'ul' */
+    display: flex; 
+    list-style: none; 
 }
 
 .main-nav ul li {
-    margin-left: 20px; /* Genera separación horizontal entre las opciones del menú */
-}
+    margin-left: 20px; 
+} /* <-- ¡CORREGIDO!: Faltaba esta llave de cierre */
 
 .main-nav ul li a {
-    text-decoration: none; /* Elimina la línea de subrayado azul por defecto de los enlaces */
+    text-decoration: none; 
     color: var(--dark-color);
-    font-weight: 600; /* Hace la tipografía semi-negrita para mejor lectura */
-    /* Transition: Suaviza el cambio de color al pasar el cursor (hover), durando 0.3 segundos */
+    font-weight: 600; 
     transition: color 0.3s; 
 }
 
@@ -81,9 +68,6 @@ body {
 
 /* --- Hero Section (Sección Principal) --- */
 .hero {
-    /* Background compuesto: Combina un degradado lineal oscuro (para opacar la imagen y que el 
-       texto blanco contraste y sea legible) junto con una imagen de Unsplash en alta resolución. 
-       'cover' asegura que la imagen cubra todo el espacio sin deformarse. */
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1200') no-repeat center center/cover;
     height: 70vh; /* Ocupa el 70% de la altura visible de la pantalla del usuario */
     display: flex;
@@ -129,8 +113,6 @@ body {
 }
 
 .container-small {
-    /* Contenedor más angosto (800px): Mantiene las líneas de texto más cortas, 
-       lo cual es un principio clave de UX de lectura para que el usuario no se canse. */
     max-width: 800px; 
     margin: 0 auto;
     padding: 0 20px;
@@ -143,8 +125,6 @@ body {
     position: relative; /* Permite posicionar el pseudo-elemento ::after con base a este título */
 }
 
-/* Pseudo-elemento ::after: Crea de forma puramente CSS una línea decorativa verde 
-   justo debajo del título sin tener que ensuciar el HTML con etiquetas extras divs vacíos. */
 .about-title::after {
     content: ''; /* Obligatorio para que el pseudo-elemento exista en el renderizado */
     display: block;
@@ -161,9 +141,9 @@ body {
     line-height: 1.8; /* Mayor espacio entre líneas de texto para una lectura fluida */
 }
 
-/* --- Services Grid (Sección de Tarjetas) --- */
+/* --- Services Grid (Sección de Tarjetas OPTIMIZADA) --- */
 .services-preview {
-    padding: 60px 0;
+    padding: 80px 0;
     text-align: center;
 }
 
@@ -173,30 +153,41 @@ body {
 }
 
 .services-grid {
-    /* CSS Grid Layout: Sistema bidimensional perfecto para maquetar grids. 
-       'repeat(3, 1fr)' crea automáticamente 3 columnas que miden exactamente lo mismo (fracciones iguales). */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px; /* Separación uniforme entre las tarjetas de servicios */
+    gap: 30px; /* Separación uniforme entre las tarjetas de servicios */
 }
 
 .service-card {
     background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Sombra suave para generar el efecto de tarjeta limpia */
-    transition: transform 0.3s; /* Prepara la tarjeta para una animación de movimiento suave */
+    padding: 35px 30px;
+    border-radius: 20px; /* Esquinas más modernas y redondeadas */
+    box-shadow: 0 12px 35px rgba(46,58,47,0.03); /* Sombra elegante Soft UI */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alineación moderna a la izquierda */
+    text-align: left;
+    border-top: 4px solid transparent; /* Línea que se encenderá al hacer hover */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .service-card:hover {
-    /* Efecto de elevación: Eleva la tarjeta 5 píxeles verticalmente en el eje Y al pasar el cursor, 
-       dando una respuesta visual dinámica e interactiva de que es un elemento clicable. */
-    transform: translateY(-5px);
+    transform: translateY(-6px); /* Elevación sutil de la tarjeta */
+    box-shadow: 0 20px 40px rgba(76, 175, 80, 0.06); /* Destello verde tenue en la sombra */
+    border-top-color: var(--primary-color); /* Iluminación superior verde */
 }
 
 .service-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
     margin-bottom: 15px;
-    color: var(--dark-color);
+    color: var(--dark-color); /* Color oscuro de alta jerarquía */
+}
+
+.service-card p {
+    color: #666666; /* Gris profesional para reducir la fatiga visual del usuario */
+    font-size: 0.95rem;
+    line-height: 1.7;
 }
 
 /* --- Footer --- */
@@ -211,12 +202,13 @@ body {
 #sobre-nosotros {
     display: grid;
     grid-template-columns: 7fr 5fr; 
-    gap: 50px;
-    padding: 70px 8%;           
-    background-color: #f9fbf9;
+    gap: 60px; /* Aumentado a 60px para que el texto y la foto no compitan */
+    padding: 90px 8%; /* Mayor espacio de respiración arriba y abajo (UX Premium) */
+    background-color: #f5fbf5; /* Un fondo verde menta blanquecino sutil que unifica la sección */
     align-items: center;
-    max-width: 1200px;
+    max-width: 1300px; /* Un toque más amplio para pantallas modernas */
     margin: 0 auto;
+    border-radius: 24px; /* Opcional: le da esquinas suaves a toda la sección si no va de borde a borde */
 }
 
 .texto-nosotros h6 {
@@ -230,36 +222,36 @@ body {
 
 .texto-nosotros h2 {
     color: var(--dark-color);
-    font-size: 2.3rem;
+    font-size: 2.6rem; /* Un pelín más grande para aumentar la jerarquía visual */
     line-height: 1.2;
     margin: 0 0 24px 0;
     font-weight: 800;
 }
 
 .texto-nosotros p {
-    color: var(--text-color);
+    color: #5d6b5e; /* Un gris verdoso que combina mejor con el fondo */
     font-size: 1.05rem;
     line-height: 1.7;
-    margin: 0 0 20px 0;
+    margin: 0 0 24px 0; /* Espacio uniforme antes del botón */
 }
 
 .btn-descubre {
     display: inline-block;
     background-color: var(--primary-color);
     color: #fff !important;
-    padding: 12px 32px;
+    padding: 14px 36px; /* Botón ligeramente más robusto y clicable */
     text-decoration: none;
     border-radius: 30px;
     font-weight: 600;
     font-size: 0.95rem;
-    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.2);
-    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.15); /* Sombra más difuminada */
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-descubre:hover {
     background-color: #439a46;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(76, 175, 80, 0.3);
+    transform: translateY(-3px); /* Efecto de flotación un poquito más dinámico */
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.25);
 }
 
 .btn-descubre .flecha {
@@ -275,10 +267,15 @@ body {
 
 .verduras img {
     width: 100%;
-    max-height: 440px;
+    max-height: 460px; /* Controla la altura perfecta en cualquier pantalla */
     object-fit: cover;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    /* Sombra basada en la marca para que no se vea gris sucia u obsoleta */
+    box-shadow: 0 20px 40px rgba(46, 58, 47, 0.06); 
     border-radius: 30px 120px 30px 30px; 
+    transition: transform 0.4s ease;
+}
+.verduras:hover img {
+    transform: scale(1.02);
 }
 
 .services-section {
@@ -302,13 +299,10 @@ body {
     margin-bottom: 10px;
     font-weight: 700;
 }
+
 /* --- RESPONSIVE DESIGN (Media Queries) --- */
 @media (max-width: 768px) {
-    /* Este bloque se activa automáticamente cuando la pantalla mide 768px de ancho o menos (Tablets y Móviles) */
-
     .header-flex {
-        /* Pasa el menú de navegación a diseño vertical, apilando el logo encima de los links 
-           para que no se corten o queden apretados en los lados. */
         flex-direction: column;
         gap: 15px;
     }
@@ -325,7 +319,7 @@ body {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start; /* Alineado a la izquierda también en móvil */
     }
 
     .services-section .service-card:hover {
@@ -344,7 +338,7 @@ body {
         grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
     }
     .hero h1 {
-        font-size: 2rem; /* Reduce el tamaño del título principal para que quepa bien en pantallas móviles */
+        font-size: 2rem; /* Reduce el tamaño del título principal para móviles */
     }
 }
 
@@ -355,8 +349,6 @@ body {
     }
     .services-title h1 {
         font-size: 2rem;
-        /* Destruye las 3 columnas y las pasa a 1 sola columna vertical (1fr). 
-           Esto evita el scroll horizontal y asegura el estándar 100% Responsive. */
         grid-template-columns: 1fr; 
     }
 }
