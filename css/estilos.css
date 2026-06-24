@@ -11,6 +11,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
 }
 
 body {
@@ -41,8 +42,13 @@ body {
     align-items: center;
 }
 
-.logo h2 span {
-    color: var(--primary-color); 
+.logo h2 {
+    color: var(--text-color);
+}
+
+.logo h2 span, .about-text span {
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
 .main-nav ul {
@@ -298,6 +304,156 @@ body {
     font-size: 2.5rem;
     margin-bottom: 10px;
     font-weight: 700;
+}
+
+/* --- CSS para la Página de Contacto --- */
+
+.contact-section {
+    padding: 60px 0;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-header h2 {
+    color: var(--dark-color);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    color: #777;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Distribución en dos columnas usando Grid */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Tarjeta de info más angosta, formulario más ancho */
+    gap: 40px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Columna de Información */
+.contact-info {
+    background: var(--dark-color);
+    color: #fff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.info-desc {
+    color: #a3bda5;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+.info-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+}
+
+.info-item strong {
+    color: var(--primary-color);
+    margin-bottom: 3px;
+}
+
+/* Columna del Formulario */
+.contact-form-container {
+    padding: 10px;
+}
+
+/* 1. Asegurar que los inputs dentro del formulario de contacto ocupen el 100% de su contenedor */
+.contact-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* 2. Forzar a que el foco funcione igual para todos */
+.contact-form input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/* Permite agrupar Nombre y Teléfono en la misma fila horizontal */
+.form-row {
+    display: flex;
+    gap: 20px;
+    width: 100%; /* Asegura que la fila use todo el ancho disponible */
+}
+
+.form-row .input-group {
+    flex: 1; /* Obliga a "Nombre" y "Teléfono" a dividirse el espacio 50% y 50% de forma exacta */
+}
+
+/* Estilos para el elemento select y textarea */
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+textarea {
+  resize: none;
+}
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.btn-submit {
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* --- RESPONSIVE CONTACTO --- */
+@media (max-width: 900px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas medianas/chicas */
+        padding: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column; /* En celulares, Nombre y Teléfono se apilan verticalmente */
+        gap: 0;
+    }
 }
 
 /* --- RESPONSIVE DESIGN (Media Queries) --- */
