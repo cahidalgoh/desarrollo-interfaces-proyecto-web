@@ -441,6 +441,54 @@ textarea {
     margin-top: 10px;
 }
 
+/* --- CSS Página En Construcción --- */
+.maintenance-section {
+    /* Centra el contenido vertical y horizontalmente en el espacio disponible */
+    min-height: calc(100vh - 200px); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.maintenance-container {
+    max-width: 600px; /* Evita que el texto se estire demasiado */
+}
+
+.maintenance-icon {
+    font-size: 4rem; /* Un emoji grande que actúa como ilustración */
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite; /* Animación sutil para ganar puntos de dinamismo */
+}
+
+.maintenance-section h1 {
+    color: var(--dark-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.maintenance-section h2 {
+    color: var(--primary-color); /* Resalta con el verde de la marca */
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.maintenance-section p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Animación sutil de flotado para el emoji */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
 /* --- RESPONSIVE CONTACTO --- */
 @media (max-width: 900px) {
     .contact-wrapper {
